@@ -5,6 +5,5 @@ public interface SinglyADT<E> {
     void remove();
     int search(E item);
     void sort();
-
     void print();
 }
