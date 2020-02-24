@@ -4,6 +4,7 @@ import defination.SinglyLinkedList;
 import person.Person;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class Main {
@@ -18,7 +19,44 @@ public class Main {
 
     public static SinglyLinkedList addContact(SinglyLinkedList list, ArrayList list1, ArrayList list2) {
         Scanner scanner = new Scanner(System.in);
-
+        Person person = new Person();
+        String s;
+        System.out.print("You have chosen to add a new contact: \n" +
+                "Please enter the name of the Person\n" +
+                "First Name:");
+        String fName = scanner.nextLine();
+        person.setfName(fName);
+        list2.add(fName);
+        System.out.println("Last Name");
+        String lName = scanner.nextLine();
+        person.setlName(lName);
+        list1.add(fName + " " + lName);
+        System.out.println("Contact Number: ");
+        long phoneNumber = scanner.nextLong();
+        person.setPhoneNumber(phoneNumber);
+        scanner.nextLine();
+        do {
+            System.out.print("Would you like to add another contact number? (y/n):");
+            s = scanner.next();
+            if (s.equalsIgnoreCase("y")) {
+                System.out.println("Contact Number: ");
+                long phoneNumber1 = scanner.nextLong();
+                person.setPhoneNumber(phoneNumber1);
+            }
+        } while (s.equalsIgnoreCase("y"));
+        scanner.nextLine();
+        System.out.println("Would you like to add email address? (y/n):");
+        s = scanner.next();
+        scanner.nextLine();
+        if (s.equalsIgnoreCase("y")) {
+            System.out.println("Email Address: ");
+            String email = scanner.nextLine();
+            person.setEmail(email);
+        }
+        list.add(person);
+        Collections.sort(list1);
+        Collections.sort(list2);
+        return list;
     }
 
 }
