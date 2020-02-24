@@ -15,15 +15,15 @@ public class Main {
         SinglyLinkedList<Person> list = new SinglyLinkedList<>();
         boolean flag = true;
         do {
-            System.out.println("Welcome to Ramballabh Agrawal's Contact List App\n" +
+            System.out.println("Welcome to Mukul Agrawal's Contact List App\n" +
                     "Press 1 to add a new contact\n" +
                     "Press 2 to view all contacts\n" +
                     "Press 3 to search for a contact\n" +
                     "Press 4 to delete a contact\n" +
                     "Press 5 to exit program ");
-            int choice = scanner.nextInt();
+            int choices = scanner.nextInt();
             scanner.nextLine();
-            switch (choice) {
+            switch (choices) {
                 case 1:
                     addContact(list, list1, list2);
                     break;
