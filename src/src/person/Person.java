@@ -51,10 +51,23 @@ public class Person {
 
     public void setPhoneNumber(long phoneNumber) {
         this.phoneNumber = phoneNumber;
+        list.add(phoneNumber);
     }
 
     public List<Long> getList() {
         return list;
+    }
+
+    private StringBuilder addString() {
+        StringBuilder sb = new StringBuilder();
+        int k = 0;
+        for (long i : list) {
+            sb.append(i);
+            k++;
+            sb.append((k <= list.size() - 1 ? "," : ""));
+            sb.append(" ");
+        }
+        return sb;
     }
 
 }
