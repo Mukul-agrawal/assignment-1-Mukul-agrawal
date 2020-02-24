@@ -70,4 +70,30 @@ public class Person {
         return sb;
     }
 
+    @Override
+    public String toString() {
+        return "-------- * -------- * -------- * --------\n" +
+                "First Name: " + fName + "\n" +
+                "Last Name: " + lName + "\n" +
+                (list.size() == 1 ? "Contact Number: " : "Contact Number(s):") + addString() + "\n" +
+                "Email Address: " + email + "\n" +
+                "-------- * -------- * -------- * --------";
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
+        }
+        if (obj == null || obj.getClass() != this.getClass()) {
+            return false;
+        }
+        Person guest = (Person) obj;
+        return fName.compareToIgnoreCase(guest.fName) >= 1;
+    }
 }

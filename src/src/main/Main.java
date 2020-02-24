@@ -16,4 +16,9 @@ public class Main {
 
     }
 
+    public static SinglyLinkedList addContact(SinglyLinkedList list, ArrayList list1, ArrayList list2) {
+        Scanner scanner = new Scanner(System.in);
+
+    }
+
 }
